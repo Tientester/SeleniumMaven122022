@@ -1,8 +1,12 @@
 package tientester.comon;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -10,6 +14,7 @@ import java.time.Duration;
 
 public class BaseTestOLD {
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     @BeforeMethod
     public static void createDriver() {
@@ -18,7 +23,9 @@ public class BaseTestOLD {
         driver.manage().window().maximize();
 
         //Set timeout cho chờ đợi ngầm định 10s
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         //Bổ trợ cho ổn định hơn
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
@@ -40,5 +47,19 @@ public class BaseTestOLD {
         if(driver != null) {
             driver.quit();
         }
+    }
+
+    public WebElement waitForElementVisible(By by, int timeout){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+
+        return driver.findElement(by);
+    }
+
+    public WebElement waitForElementPressent(By by, int timeout){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+
+        return driver.findElement(by);
     }
 }
