@@ -21,10 +21,10 @@ public class Projects extends BaseTestOLD {
         System.out.println(loginPageText);
         Assert.assertEquals(loginPageText.trim(), "Welcome to HRSALE", "Text không thuộc trang Login");
 
-        WebUI.setText(driver ,By.id("iusername"), "frances.burns");
-        WebUI.setText(driver ,By.id("ipassword"), "frances.burns");
-        WebUI.clickElement(driver, By.xpath("//button[normalize-space()='Login']"));
-        WebUI.clickElement(driver, By.xpath("//span[normalize-space()='Projects']"));
+        WebUI.setText( By.id("iusername"), "frances.burns");
+        WebUI.setText(By.id("ipassword"), "frances.burns");
+        WebUI.clickElement( By.xpath("//button[normalize-space()='Login']"));
+        WebUI.clickElement(By.xpath("//span[normalize-space()='Projects']"));
 
         //driver.findElement(By.id("iusername")).sendKeys("admin01");
         //driver.findElement(By.id("ipassword")).sendKeys("123456");
@@ -37,7 +37,7 @@ public class Projects extends BaseTestOLD {
 
         driver.findElement(By.xpath("//a[normalize-space()='Thêm mới']")).click();
 
-        WebUI.setText(driver,By.xpath("//input[@placeholder='Tiêu đề']"), tenDuAn);
+        WebUI.setText(By.xpath("//input[@placeholder='Tiêu đề']"), tenDuAn);
 
         driver.findElement(By.xpath("//span[@id='select2-client_id-container']")).click();
 
