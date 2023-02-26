@@ -1,0 +1,54 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Parameter" verbose="1">
+    <parameter name="Number2" value="12"></parameter>
+
+<!--    <test name="Sum Number 1">-->
+<!--&lt;!&ndash;        <parameter name="Number1" value="25"></parameter>&ndash;&gt;-->
+<!--        <parameter name="Number2" value="15"></parameter>-->
+<!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="tientester.Bai24ParameterMultiBrowser.TestParameter" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Sum Number 2">-->
+<!--        <parameter name="Number1" value="25"></parameter>-->
+<!--&lt;!&ndash;        <parameter name="Number2" value="15"></parameter>&ndash;&gt;-->
+<!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="tientester.Bai24ParameterMultiBrowser.TestParameter" />-->
+
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Login Parameter 1">
+        <parameter name="username" value="joe.larson"></parameter>
+        <parameter name="password" value="joe.larson"></parameter>
+<!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+        <classes>
+            <class name="tientester.Bai24ParameterMultiBrowser.LoginTestParameter">
+                <methods>
+                    <include name="testLogin"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="Login Parameter 2">
+        <parameter name="username" value="joe.larson1"></parameter>
+        <parameter name="password" value="joe.larson"></parameter>
+        <!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+        <classes>
+            <class name="tientester.Bai24ParameterMultiBrowser.LoginTestParameter">
+                <methods>
+                    <include name="loginInvalidEmail"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

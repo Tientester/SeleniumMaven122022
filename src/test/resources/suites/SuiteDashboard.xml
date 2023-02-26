@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite All" verbose="1">
+
+    <test name="Regression Test All">
+<!--        <parameter name="browser" value="edge"></parameter>-->
+        <classes>
+<!--            <class name="tientester.Bai20_21_ThucHanhPOMPart_1_2.testcase.LoginTest" />-->
+            <class name="tientester.Bai20_21_ThucHanhPOMPart_1_2.testcase.DashboardTest" />
+
+        </classes>
+    </test>
+
+
+
+</suite>

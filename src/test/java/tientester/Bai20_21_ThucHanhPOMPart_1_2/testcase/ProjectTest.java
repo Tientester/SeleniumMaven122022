@@ -1,11 +1,12 @@
-package tientester.Bai20ThucHanhPOMPart1.testcase;
+package tientester.Bai20_21_ThucHanhPOMPart_1_2.testcase;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import tientester.Bai20ThucHanhPOMPart1.pages.DashboardPage;
-import tientester.Bai20ThucHanhPOMPart1.pages.LoginPage;
-import tientester.Bai20ThucHanhPOMPart1.pages.ProjectPage;
+import tientester.Bai20_21_ThucHanhPOMPart_1_2.pages.DashboardPage;
+import tientester.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;
+import tientester.Bai20_21_ThucHanhPOMPart_1_2.pages.ProjectPage;
 import tientester.comon.BaseTestOLD;
+import tientester.datatest.ConstantData;
 
 public class ProjectTest extends BaseTestOLD {
 
@@ -34,8 +35,14 @@ public class ProjectTest extends BaseTestOLD {
 
     @Test
     public void testAddProject(){
-        dashboardPage = loginPage.logIn("frances.burns","frances.burns");
+        dashboardPage = loginPage.logIn(ConstantData.USERNAME,ConstantData.PASSWORD);
         projectPage = dashboardPage.openProject();
-        projectPage.addProject();
+        projectPage.addProject(ConstantData.PROJECTNAME);
+    }
+    @Test(priority = 2)
+    public void testNavigatetoTask(){
+        dashboardPage = loginPage.logIn(ConstantData.USERNAME,ConstantData.PASSWORD);
+        projectPage = dashboardPage.openProject();
+        projectPage.openTask();
     }
 }

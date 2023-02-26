@@ -19,6 +19,7 @@ public class DashboardPage{
 
     private By buttonLogout = By.xpath("//a[@class='btn btn-smb btn-outline-primary rounded-pill']");
 
+
     public ProjectPage openProject(){
         WebUI.clickElement(menuProject);
 

@@ -84,7 +84,7 @@ public class Projects extends BaseTestOLD {
         js.executeScript("arguments[0].scrollIntoView(false);", driver.findElement(By.xpath("//div[@id='xin_table_wrapper']//input")));
         driver.findElement(By.xpath("//div[@id='xin_table_wrapper']//input")).sendKeys(tenDuAn);
 
-        WebUI.waitForElementVisible(driver, By.xpath("//td[normalize-space()='" + tenDuAn + "']"));
+        WebUI.waitForElementVisible( By.xpath("//td[normalize-space()='" + tenDuAn + "']"));
 //        WebDriverWait wait = new WebDriverWait(Duration.ofSeconds(5));
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[normalize-space()='" + tenDuAn + "']")));
 
